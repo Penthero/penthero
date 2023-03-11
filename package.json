@@ -1,0 +1,24 @@
+{
+  "name": "sss",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev-server": "encore dev-server",
+    "dev": "encore dev",
+    "watch": "encore dev --watch",
+    "build": "encore production --progress"
+  },
+  "dependencies": {
+    "core-js": "^3.29.0",
+    "pinia": "^2.0.32",
+    "vue": "^3.2.47",
+    "vue-router": "^4.1.6"
+  },
+  "devDependencies": {
+    "@symfony/webpack-encore": "^4.2.0",
+    "@vitejs/plugin-vue": "^4.0.0",
+    "vite": "^4.1.4",
+    "vue-loader": "^17.0.1",
+    "webpack-notifier": "^1.15.0"
+  }
+}
