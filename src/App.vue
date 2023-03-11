@@ -7,11 +7,6 @@ import HelloWorld from './components/HelloWorld.vue'
   <header>
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/sss">Home</RouterLink>
-        <RouterLink to="/sss/about">About</RouterLink>
-      </nav>
     </div>
   </header>
 
