@@ -8,7 +8,8 @@ import SupportIcon from './icons/IconSupport.vue'
 </script>
 
 <template>
-  <WelcomeItem>
+  <p>For now we have nothing here, you can download some of <a href="./api/sss.xlsx">Mornns comments</a> for now</p>
+  <!--<WelcomeItem>
     <template #icon>
       <DocumentationIcon />
     </template>
@@ -157,5 +158,5 @@ import SupportIcon from './icons/IconSupport.vue'
     As an independent project, Vue relies on community backing for its sustainability. You can help
     us by
     <a href="https://vuejs.org/sponsor/" target="_blank" rel="noopener">becoming a sponsor</a>.
-  </WelcomeItem>
+  </WelcomeItem>-->
 </template>
