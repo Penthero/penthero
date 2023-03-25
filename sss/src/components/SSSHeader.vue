@@ -1,19 +1,14 @@
 <script setup>
 defineProps({
-  msg: {
-    type: String,
-    required: true
-  }
 })
 </script>
 
 <template>
   <div class="greetings">
-    <h1 class="green">{{ msg }}</h1>
+    <h1 class="green">Saintess Summons Skeletons status calc</h1>
     <h3>
-      You’ve successfully created a project with
-      <a href="https://vitejs.dev/" target="_blank" rel="noopener">Vite</a> +
-      <a href="https://vuejs.org/" target="_blank" rel="noopener">Vue 3</a>.
+      <a target="_blank" href="https://www.royalroad.com/fiction/62087/saintess-summons-skeletons">Saintess Summon
+        Skeletons </a> is a WN written by <a target="_blank" href="https://www.royalroad.com/profile/298966">Mornn</a>.
     </h3>
   </div>
 </template>
