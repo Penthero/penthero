@@ -28,14 +28,28 @@ function comments(): string
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <style>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./normalize.css">
+    <style type="text/css">
+
         .container {
             max-width: 720px;
             margin: auto;
+            padding: 15px;
         }
 
         .comment {
             margin-bottom: 50px;
+        }
+
+        .spoiler-inner {
+            display: block !important;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
         }
     </style>
 </head>
