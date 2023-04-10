@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import SofiaView from '../views/SofiaView.vue'
 import AboutView from '../views/AboutView.vue'
 
 const router = createRouter({
@@ -7,14 +7,21 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: HomeView
+      redirect: {name: 'sofia-status'}
     },
     {
-      path: '/about',
-      name: 'about',
-      component: AboutView
-    }
+      path: '/character',
+      redirect: {name: 'sofia-status'}
+    },
+    {
+      path: '/character/sofia',
+      redirect: {name: 'sofia-status'}
+    },
+    {
+      path: '/character/sofia/status',
+      name: 'sofia-status',
+      component: SofiaView
+    },
   ]
 })
 

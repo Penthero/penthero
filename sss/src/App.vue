@@ -1,16 +1,11 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/SSSHeader.vue'
+import {RouterView} from 'vue-router'
 </script>
 
 <template>
-  <header>
-    <div class="wrapper">
-      <HelloWorld/>
-    </div>
-  </header>
-
-  <RouterView />
+  <div class="wrapper">
+    <RouterView/>
+  </div>
 </template>
 
 <style scoped>
