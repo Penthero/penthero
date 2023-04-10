@@ -7,7 +7,7 @@ import CharacterList from '../components/CharacterList'
 <template>
   <main>
     <div class="profile">
-      <CharacterList/>
+      <CharacterList :character="name"/>
       <Character :character="store"/>
     </div>
     <div class="additional-information">
@@ -28,7 +28,6 @@ export default {
   },
   computed: {
     store() {
-      console.log(this.character)
       switch (this.character) {
         case 'sofia':
           return useSofiaStore()
@@ -38,7 +37,12 @@ export default {
           return useParethStore()
         case 'mornn':
           return useMornnStore()
+        default:
+          return null
       }
+    },
+    name() {
+      return this.store ? this.store.name : null
     }
   }
 }
@@ -83,7 +87,7 @@ main {
   position: fixed;
   top: 20px;
   left: 20px;
-  width: 50vw;    
+  width: 50vw;
   max-height: calc(100vh - 40px);
   overflow-x: hidden;
 }

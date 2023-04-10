@@ -1,15 +1,15 @@
 <template>
   <div class="character-list">
-    <router-link :to="{name: 'sofia-profile'}">
+    <router-link :to="{name: 'character-profile', params: {character: 'sofia'}}">
       <div class="character-portrait sofia"></div>
     </router-link>
-    <router-link :to="{name: 'alith-profile'}">
+    <router-link :to="{name: 'character-profile', params: {character: 'alith'}}">
       <div class="character-portrait alith"></div>
     </router-link>
-    <router-link :to="{name: 'pareth-profile'}">
+    <router-link :to="{name: 'character-profile', params: {character: 'pareth'}}">
       <div class="character-portrait pareth"></div>
     </router-link>
-    <router-link :to="{name: 'mornn-comments'}">
+    <router-link :to="{name: 'mornn-profile'}">
       <div class="character-portrait mornn"></div>
     </router-link>
   </div>

@@ -12,7 +12,7 @@ $baseManaRegen = 0.0002 * (isset($_GET['ring']) && $_GET['ring'] ? 1.05 : 1);
 $alith = isset($_GET['alith']) && $_GET['alith'] ? 10000 : 0;
 $scribe = isset($_GET['scribe']) && $_GET['scribe'] ? 5000 : 0;
 $ambient = isset($_GET['ambient']) && $_GET['ambient'] ? 1 : 0.25;
-$sunRune = isset($_GET['sun']) && $_GET['sun'] ? 2 : 1;
+$sunRune = isset($_GET['sun']) && $_GET['sun'] ? 3 : 1;
 // LAYERS
 $layers = [
     [

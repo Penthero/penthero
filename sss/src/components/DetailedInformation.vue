@@ -4,7 +4,7 @@ import {RouterView} from 'vue-router'
 
 <template>
   <div class="details">
-  <RouterView name="detailedInformation" :character="character"/>
+  <RouterView :character="character"/>
   </div>
 </template>
 
