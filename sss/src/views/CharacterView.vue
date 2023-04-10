@@ -20,6 +20,7 @@ import CharacterList from '../components/CharacterList'
 import {useSofiaStore} from "../stores/sofia";
 import {useAlithStore} from "../stores/alith";
 import {useParethStore} from "../stores/pareth";
+import {useMornnStore} from "../stores/mornn";
 
 export default {
   props: {
@@ -35,6 +36,8 @@ export default {
           return useAlithStore()
         case 'pareth':
           return useParethStore()
+        case 'mornn':
+          return useMornnStore()
       }
     }
   }
@@ -80,7 +83,9 @@ main {
   position: fixed;
   top: 20px;
   left: 20px;
-  width: 50vw;
+  width: 50vw;    
+  max-height: calc(100vh - 40px);
+  overflow-x: hidden;
 }
 
 .additional-information {

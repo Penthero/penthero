@@ -1,9 +1,11 @@
 import {createRouter, createWebHistory} from 'vue-router'
 import CharacterView from '../views/CharacterView'
 import Attributes from "../components/Attributes";
-import SofiaStatusToggles from '../components/sofia/StatusToggles.vue'
-import AlithStatusToggles from '../components/alith/StatusToggles.vue'
-import ParethStatusToggles from '../components/pareth/StatusToggles.vue'
+import SofiaStatusToggles from '../components/sofia/StatusToggles'
+import AlithStatusToggles from '../components/alith/StatusToggles'
+import ParethStatusToggles from '../components/pareth/StatusToggles'
+import MornnComments from '../components/mornn/Comments'
+import MornnDescription from '../components/mornn/Description'
 
 const router = createRouter({
     history: createWebHistory('sss'),
@@ -52,6 +54,19 @@ const router = createRouter({
                     path: 'profile',
                     name: 'pareth-profile',
                     components: { default: ParethStatusToggles, detailedInformation: Attributes},
+                },
+            ]
+        },
+        {
+            path: '/character/mornn',
+            component: CharacterView,
+            redirect: {name: 'mornn-comments'},
+            props: { character: 'mornn' },
+            children: [
+                {
+                    path: 'comments',
+                    name: 'mornn-comments',
+                    components: { default: MornnDescription, detailedInformation: MornnComments},
                 },
             ]
         },

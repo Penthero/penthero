@@ -9,6 +9,9 @@
     <router-link :to="{name: 'pareth-profile'}">
       <div class="character-portrait pareth"></div>
     </router-link>
+    <router-link :to="{name: 'mornn-comments'}">
+      <div class="character-portrait mornn"></div>
+    </router-link>
   </div>
 </template>
 
@@ -40,6 +43,11 @@
 
   &.pareth {
     background-image: url("../assets/images/pareth-portrait.png");
+  }
+
+  &.mornn {
+    background-image: url("../assets/images/mornn-portrait.png");
+    height: 140px;
   }
 }
 </style>
