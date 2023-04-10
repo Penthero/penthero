@@ -16,6 +16,8 @@ Encore
 
     // enable VueJs
     .enableVueLoader()
+    // enable sass loader
+    .enableSassLoader()
     /*
      * ENTRY CONFIG
      *

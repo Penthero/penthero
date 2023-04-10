@@ -1,28 +1,43 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import {createRouter, createWebHistory} from 'vue-router'
 import SofiaView from '../views/SofiaView.vue'
-import AboutView from '../views/AboutView.vue'
+import SofiaStatusToggles from '../components/sofia/StatusToggles.vue'
 
 const router = createRouter({
-  history: createWebHistory('sss'),
-  routes: [
-    {
-      path: '/',
-      redirect: {name: 'sofia-status'}
-    },
-    {
-      path: '/character',
-      redirect: {name: 'sofia-status'}
-    },
-    {
-      path: '/character/sofia',
-      redirect: {name: 'sofia-status'}
-    },
-    {
-      path: '/character/sofia/status',
-      name: 'sofia-status',
-      component: SofiaView
-    },
-  ]
+    history: createWebHistory('sss'),
+    routes: [
+        {
+            path: '/',
+            redirect: {name: 'sofia-profile'}
+        },
+        {
+            path: '/character',
+            redirect: {name: 'sofia-profile'}
+        },
+        {
+            path: '/character/sofia',
+            component: SofiaView,
+            redirect: {name: 'sofia-profile'},
+            children: [
+                {
+                    path: 'profile',
+                    name: 'sofia-profile',
+                    component: SofiaStatusToggles,
+                },
+            ]
+        },
+        {
+            path: '/character/alith',
+            name: 'alith-profile',
+            component: SofiaView,
+            children: [
+                {
+                    path: '/character/alith/skills',
+                    name: 'alith-skills',
+                    component: SofiaView
+                },
+            ]
+        },
+    ]
 })
 
 export default router

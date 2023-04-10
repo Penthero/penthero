@@ -17,6 +17,8 @@
   "devDependencies": {
     "@symfony/webpack-encore": "^4.2.0",
     "@vitejs/plugin-vue": "^4.0.0",
+    "node-sass": "^8.0.0",
+    "sass-loader": "^13.2.2",
     "vite": "^4.1.4",
     "vue-loader": "^17.0.1",
     "webpack-notifier": "^1.15.0"
