@@ -1,22 +1,42 @@
 <script setup>
-import DetailedInformation from '../components/sofia/DetailedInformation'
-import SofiaCharacter from '../components/sofia/Character'
+import DetailedInformation from '../components/DetailedInformation'
+import Character from '../components/Character'
 import CharacterList from '../components/CharacterList'
-
 </script>
 
 <template>
   <main>
     <div class="profile">
       <CharacterList/>
-      <SofiaCharacter/>
+      <Character :character="store"/>
     </div>
     <div class="additional-information">
-      <DetailedInformation/>
+      <DetailedInformation :character="store"/>
     </div>
   </main>
 </template>
 
+<script>
+import {useSofiaStore} from "../stores/sofia";
+import {useAlithStore} from "../stores/alith";
+
+export default {
+  props: {
+    character: String,
+  },
+  computed: {
+    store() {
+      console.log(this.character)
+      switch (this.character) {
+        case 'sofia':
+          return useSofiaStore()
+        case 'alith':
+          return useAlithStore()
+      }
+    }
+  }
+}
+</script>
 
 <style>
 @media (min-width: 1024px) {
