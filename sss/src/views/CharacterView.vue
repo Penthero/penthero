@@ -19,6 +19,7 @@ import CharacterList from '../components/CharacterList'
 <script>
 import {useSofiaStore} from "../stores/sofia";
 import {useAlithStore} from "../stores/alith";
+import {useParethStore} from "../stores/pareth";
 
 export default {
   props: {
@@ -32,6 +33,8 @@ export default {
           return useSofiaStore()
         case 'alith':
           return useAlithStore()
+        case 'pareth':
+          return useParethStore()
       }
     }
   }

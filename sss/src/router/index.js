@@ -1,8 +1,9 @@
 import {createRouter, createWebHistory} from 'vue-router'
 import CharacterView from '../views/CharacterView'
-import SofiaStatusToggles from '../components/sofia/StatusToggles.vue'
 import Attributes from "../components/Attributes";
+import SofiaStatusToggles from '../components/sofia/StatusToggles.vue'
 import AlithStatusToggles from '../components/alith/StatusToggles.vue'
+import ParethStatusToggles from '../components/pareth/StatusToggles.vue'
 
 const router = createRouter({
     history: createWebHistory('sss'),
@@ -38,6 +39,19 @@ const router = createRouter({
                     path: 'profile',
                     name: 'alith-profile',
                     components: { default: AlithStatusToggles, detailedInformation: Attributes},
+                },
+            ]
+        },
+        {
+            path: '/character/pareth',
+            component: CharacterView,
+            redirect: {name: 'pareth-profile'},
+            props: { character: 'pareth' },
+            children: [
+                {
+                    path: 'profile',
+                    name: 'pareth-profile',
+                    components: { default: ParethStatusToggles, detailedInformation: Attributes},
                 },
             ]
         },

@@ -6,6 +6,9 @@
     <router-link :to="{name: 'alith-profile'}">
       <div class="character-portrait alith"></div>
     </router-link>
+    <router-link :to="{name: 'pareth-profile'}">
+      <div class="character-portrait pareth"></div>
+    </router-link>
   </div>
 </template>
 
@@ -20,7 +23,7 @@
 }
 
 .character-portrait {
-  width: 120px;
+  width: 140px;
   height: 180px;
   margin: 10px;
   text-align: center;
@@ -33,6 +36,10 @@
 
   &.alith {
     background-image: url("../assets/images/alith-portrait.png");
+  }
+
+  &.pareth {
+    background-image: url("../assets/images/pareth-portrait.png");
   }
 }
 </style>

@@ -9,7 +9,7 @@ export const useAlithStore = defineStore('alith', () => {
   const job = computed(() => alith.value ? alith.value.class : null)
   const level = computed(() => alith.value ? alith.value.level : null)
   function load() {
-    axios.get('/sss/api/characters/alith/profile')
+    axios.get('/sss/api/characters/alith')
         .then(function(response) {
           alith.value = response.data
         })

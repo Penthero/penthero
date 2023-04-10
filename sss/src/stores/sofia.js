@@ -9,7 +9,7 @@ export const useSofiaStore = defineStore('sofia', () => {
   const job = computed(() => sofia.value ? sofia.value.class : null)
   const level = computed(() => sofia.value ? sofia.value.level : null)
   function load() {
-    axios.get('/sss/api/characters/sofia/profile')
+    axios.get('/sss/api/characters/sofia')
         .then(function(response) {
           sofia.value = response.data
         })
