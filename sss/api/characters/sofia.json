@@ -3,12 +3,22 @@
   "age": 20,
   "class": "[Saintomancer] ♢",
   "level": 180,
+  "stats": {
+    "baseHealth": 5,
+    "healthIncrease": 5,
+    "baseStamina": 5,
+    "staminaIncrease": 5,
+    "baseMana": 5000,
+    "manaIncrease": 500,
+    "baseManaRegen": 0.0002
+  },
   "toggles": [
     {
-      "type": "Equipment",
+      "type": "Environment",
       "items": [
         {
           "name": "Ambient mana",
+          "description": "If there's ambient mana around Sofia, if there isn't the mana recovery gets reduced to 25%",
           "value": true
         }
       ]
@@ -17,8 +27,148 @@
       "type": "Rituals",
       "items": [
         {
-          "name": "Ritual of Sun",
+          "name": "Ritual of Sun TODO: fix name",
+          "description": "Ritual Sofia has learned that increases the mana regeneration speed by 200%",
           "value": false
+        }
+      ]
+    }
+  ],
+  "Skills": [
+    {
+      "type": "Active Skills",
+      "items": [
+        {
+          "name": "[Holy Skeleton]",
+          "level": 1,
+          "description": "Allows the Saintomancer to control a ritually created Holy Skeleton wielding the Holy Light of gods. The Holy Skeleton will keep experience when switching bones. Physical and magical capabilities are influenced by the current bones.<br><br>Lv.1 : The Saintomancer always knows where their Holy Skeleton is.<br>Lv.10 : The Holy Skeleton boasts a glorious [Halo] empowering Holy related skills.<br>Lv.20 : The Holy Skeleton can create and wield a sword of Holy light. Proficiency depends on the host bones."
+        },
+        {
+          "name": "[Heal Undead]",
+          "level": 1,
+          "description": "Invokes a pillar of Holy healing light. Only heals the undead.<br>Max range of (1*Skill Level) meter.<br>Heal the undead for (10+Skill level) Health per second while the light is channeled.<br>The light pillar’s upkeep is (100 * pillar's meters width * pillar's meters width) mana per second.<br>Does not work in restricted spaces."
+        },
+        {
+          "name": "[Summon blood]",
+          "level": 1,
+          "description": "Summons liquid human blood anywhere in a (1*Skill Level) meters radius from the Saintomancer (Must be free space). The quantity of blood summoned this way is : (1*Skill Level*Mana Spent) Milliliters."
+        }
+      ]
+    },
+    {
+      "type": "Passive Skills",
+      "items": [
+        {
+          "name": "[Blessing of Deep]",
+          "level": 2,
+          "condition": {
+            "type": "combination",
+            "items": [
+              "[Blessing of ]",
+              "[ Deep]"
+            ]
+          },
+          "description": "The Saintomancer was granted a name.<br>They may see the inhabitants of the Deep.<br>Lv.1 : The Saintomancer and their summons are immune to the [Mind control], [Hypnosis], [Confusion], [Insanity] and [Instant Death] status effects."
+        }
+      ]
+    },
+    {
+      "type": "Classless Skills",
+      "items": [
+        {
+          "name": "[Menial chores]",
+          "level": 1,
+          "description": "Stamina consumption of all non battle actions is reduced by (1*Skill Level)."
+        },
+        {
+          "name": "[Sprint]",
+          "level": 1,
+          "description": "Top running speed is (10*Skill level) higher."
+        },
+        {
+          "name": "[Fast reading]",
+          "level": 1,
+          "description": "Can read (10*Skill level) faster."
+        },
+        {
+          "name": "[Shenanigans]",
+          "level": 1,
+          "target": {
+            "type": "evolution",
+            "level": 49,
+            "result": "[Way of the Fool]"
+          },
+          "description": "Analytical thinking is (1*Skill level) more efficient when used for personal gains."
+        },
+        {
+          "name": "[Way of the Fool]",
+          "level": "31-39",
+          "description": "Analytical thinking is (1*Skill level + 50) more efficient when used for personal gain. The Fool always stumbles but never falls. Gain extra experience from performing kills with trickery and deceit."
+        },
+        {
+          "name": "[Poker Face]",
+          "level": "31-39",
+          "description": "Keeping a straight face in all situations is (2*Skill level) easier."
+        }
+      ]
+    },
+    {
+      "type": "Active Words",
+      "items": [
+        {
+          "name": "[Dispel ]",
+          "level": 10,
+          "description": "Dispels"
+        },
+        {
+          "name": "[ bolt]",
+          "level": 10,
+          "description": "projectile from the hand."
+        },
+        {
+          "name": "[Maiden ]",
+          "level": 20,
+          "description": "Invoke the power of a maiden"
+        },
+        {
+          "name": "[ mist]",
+          "level": 20,
+          "description": "in a thick mist."
+        }
+      ]
+    },
+    {
+      "type": "Passive Words",
+      "items": [
+        {
+          "name": "[Blessing of ]",
+          "level": 1,
+          "target": {
+            "type": "combination",
+            "level": 2,
+            "result": "[Blessing of Deep]"
+          },
+          "description": "The saintess is blessed by"
+        },
+        {
+          "name": "[ Deep]",
+          "level": 2,
+          "target": {
+            "type": "combination",
+            "level": 2,
+            "result": "[Blessing of Deep]"
+          },
+          "description": "the Deep."
+        },
+        {
+          "name": "[Pristine ]",
+          "level": 30,
+          "description": "Your soul is in"
+        },
+        {
+          "name": "[ of Bones]",
+          "level": 30,
+          "description": "against physical projectiles."
         }
       ]
     }
