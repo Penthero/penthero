@@ -8,7 +8,7 @@ const router = createRouter({
     routes: [
         {
             path: '/',
-            redirect: {name: 'sofia-profile'}
+            redirect: {name: 'character-profile', params: {character: 'sofia'}}
         },
         {
             path: '/character',
