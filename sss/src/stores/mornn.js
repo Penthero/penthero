@@ -9,7 +9,7 @@ export const useMornnStore = defineStore('mornn', () => {
   const job = computed(() => mornn.value ? mornn.value.class : null)
   const level = computed(() => mornn.value ? mornn.value.level : null)
   function load() {
-    axios.get('/sss/api/characters/mornn/')
+    axios.get('/sss/api/characters/mornn.json')
         .then(function(response) {
           mornn.value = response.data
         })

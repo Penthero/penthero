@@ -9,7 +9,7 @@ export const useParethStore = defineStore('pareth', () => {
   const job = computed(() => pareth.value ? pareth.value.class : null)
   const level = computed(() => pareth.value ? pareth.value.level : null)
   function load() {
-    axios.get('/sss/api/characters/pareth/')
+    axios.get('/sss/api/characters/pareth.json')
         .then(function(response) {
           pareth.value = response.data
         })

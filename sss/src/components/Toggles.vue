@@ -1,0 +1,14 @@
+<template>
+  <div v-for="toggle in toggles">
+    <h3>{{ toggle.type }}</h3>
+    <label v-for="item in toggle.items">{{ item.name }} <input type="checkbox" v-model="item.value"></label>
+  </div>
+</template>
+
+<script>
+export default {
+  props: {
+    toggles: Array,
+  },
+}
+</script>

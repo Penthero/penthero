@@ -1,8 +1,5 @@
 <script setup>
-import SofiaToggles from './sofia/StatusToggles'
-import AlithToggles from './alith/StatusToggles'
-import ParethToggles from './pareth/StatusToggles'
-import MornnDescription from './mornn/Description'
+import Toggles from './Toggles'
 </script>
 
 <template>
@@ -13,10 +10,7 @@ import MornnDescription from './mornn/Description'
     <p class="row"><span class="column"><b>Class :</b> {{ character.job }}</span><span
         class="column"><b>Level :</b> {{character.level}}</span></p>
 
-    <SofiaToggles v-if="name === 'sofia'"/>
-    <AlithToggles v-else-if="name === 'alith'"/>
-    <ParethToggles v-else-if="name === 'paleth'"/>
-    <MornnDescription v-else-if="name === 'mornn'"/>
+    <Toggles :toggles="character.toggles"/>
   </div>
 </template>
 

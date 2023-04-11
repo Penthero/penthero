@@ -1,0 +1,26 @@
+{
+  "name": "Sofia",
+  "age": 20,
+  "class": "[Saintomancer] ♢",
+  "level": 180,
+  "toggles": [
+    {
+      "type": "Equipment",
+      "items": [
+        {
+          "name": "Ambient mana",
+          "value": true
+        }
+      ]
+    },
+    {
+      "type": "Rituals",
+      "items": [
+        {
+          "name": "Ritual of Sun",
+          "value": false
+        }
+      ]
+    }
+  ]
+}
