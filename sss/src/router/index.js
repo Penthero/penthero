@@ -12,7 +12,7 @@ const router = createRouter({
         },
         {
             path: '/character',
-            redirect: {name: 'sofia-profile', params: {character: 'sofia'}}
+            redirect: {name: 'character-profile', params: {character: 'sofia'}}
         },
         {
             path: '/character/mornn',
