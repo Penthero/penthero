@@ -1,6 +1,7 @@
 import {createRouter, createWebHistory} from 'vue-router'
-import SofiaView from '../views/SofiaView.vue'
-import SofiaStatusToggles from '../components/sofia/StatusToggles.vue'
+import CharacterView from '../views/CharacterView'
+import Attributes from "../components/Attributes";
+import MornComments from "../components/mornn/Comments";
 
 const router = createRouter({
     history: createWebHistory('sss'),
@@ -11,29 +12,31 @@ const router = createRouter({
         },
         {
             path: '/character',
-            redirect: {name: 'sofia-profile'}
+            redirect: {name: 'character-profile', params: {character: 'sofia'}}
         },
         {
-            path: '/character/sofia',
-            component: SofiaView,
-            redirect: {name: 'sofia-profile'},
+            path: '/character/mornn',
+            component: CharacterView,
+            redirect: {name: 'mornn-profile'},
+            props: {character: 'mornn'},
             children: [
                 {
                     path: 'profile',
-                    name: 'sofia-profile',
-                    component: SofiaStatusToggles,
+                    name: 'mornn-profile',
+                    component: MornComments
                 },
             ]
         },
         {
-            path: '/character/alith',
-            name: 'alith-profile',
-            component: SofiaView,
+            path: '/character/:character',
+            component: CharacterView,
+            redirect: {name: 'character-profile'},
+            props: true,
             children: [
                 {
-                    path: '/character/alith/skills',
-                    name: 'alith-skills',
-                    component: SofiaView
+                    path: 'profile',
+                    name: 'character-profile',
+                    component: Attributes
                 },
             ]
         },

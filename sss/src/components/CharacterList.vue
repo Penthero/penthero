@@ -1,10 +1,16 @@
 <template>
   <div class="character-list">
-    <router-link :to="{name: 'sofia-profile'}">
+    <router-link :to="{name: 'character-profile', params: {character: 'sofia'}}">
       <div class="character-portrait sofia"></div>
     </router-link>
-    <router-link :to="{name: 'alith-profile'}">
+    <router-link :to="{name: 'character-profile', params: {character: 'alith'}}">
       <div class="character-portrait alith"></div>
+    </router-link>
+    <router-link :to="{name: 'character-profile', params: {character: 'pareth'}}">
+      <div class="character-portrait pareth"></div>
+    </router-link>
+    <router-link :to="{name: 'mornn-profile'}">
+      <div class="character-portrait mornn"></div>
     </router-link>
   </div>
 </template>
@@ -20,7 +26,7 @@
 }
 
 .character-portrait {
-  width: 120px;
+  width: 140px;
   height: 180px;
   margin: 10px;
   text-align: center;
@@ -33,6 +39,15 @@
 
   &.alith {
     background-image: url("../assets/images/alith-portrait.png");
+  }
+
+  &.pareth {
+    background-image: url("../assets/images/pareth-portrait.png");
+  }
+
+  &.mornn {
+    background-image: url("../assets/images/mornn-portrait.png");
+    height: 140px;
   }
 }
 </style>

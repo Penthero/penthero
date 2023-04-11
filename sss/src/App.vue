@@ -1,5 +1,14 @@
 <script setup>
 import {RouterView} from 'vue-router'
+import {useSofiaStore} from "./stores/sofia";
+import {useAlithStore} from "./stores/alith";
+import {useParethStore} from "./stores/pareth";
+import {useMornnStore} from "./stores/mornn";
+
+useSofiaStore().load()
+useAlithStore().load()
+useParethStore().load()
+useMornnStore().load()
 </script>
 
 <template>
@@ -10,6 +19,6 @@ import {RouterView} from 'vue-router'
 
 <style scoped>
 .wrapper {
-  width : 100vw
+  width : 100vw;
 }
 </style>
