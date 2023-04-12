@@ -93,6 +93,7 @@
         {
           "name": "[Shenanigans]",
           "level": 1,
+          "maxLevel": 50,
           "target": {
             "type": "evolution",
             "level": 49,
@@ -103,6 +104,12 @@
         {
           "name": "[Way of the Fool]",
           "level": "31-39",
+          "condition": {
+            "type": "evolution",
+            "items": [
+              "[Shenanigans]"
+            ]
+          },
           "description": "Analytical thinking is (1*Skill level + 50) more efficient when used for personal gain. The Fool always stumbles but never falls. Gain extra experience from performing kills with trickery and deceit."
         },
         {

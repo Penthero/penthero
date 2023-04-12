@@ -1,14 +1,8 @@
 <script setup>
 import {RouterView} from 'vue-router'
-import {useSofiaStore} from "./stores/sofia";
-import {useAlithStore} from "./stores/alith";
-import {useParethStore} from "./stores/pareth";
-import {useMornnStore} from "./stores/mornn";
+import {useCharacterStore} from "./stores/character";
 
-useSofiaStore().load()
-useAlithStore().load()
-useParethStore().load()
-useMornnStore().load()
+useCharacterStore().load()
 </script>
 
 <template>

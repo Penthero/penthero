@@ -7,43 +7,29 @@ import CharacterList from '../components/CharacterList'
 <template>
   <main>
     <div class="profile">
-      <CharacterList :character="name"/>
-      <Character :character="store"/>
+      <CharacterList/>
+      <Character/>
     </div>
     <div class="additional-information">
-      <DetailedInformation :character="store"/>
+      <DetailedInformation/>
     </div>
   </main>
 </template>
 
 <script>
-import {useSofiaStore} from "../stores/sofia";
-import {useAlithStore} from "../stores/alith";
-import {useParethStore} from "../stores/pareth";
-import {useMornnStore} from "../stores/mornn";
+import {useCharacterStore} from "../stores/character";
 
 export default {
   props: {
     character: String,
   },
-  computed: {
-    store() {
-      switch (this.character) {
-        case 'sofia':
-          return useSofiaStore()
-        case 'alith':
-          return useAlithStore()
-        case 'pareth':
-          return useParethStore()
-        case 'mornn':
-          return useMornnStore()
-        default:
-          return null
-      }
+  watch: {
+    character: function (newVal, oldVal) {
+      useCharacterStore().set(newVal)
     },
-    name() {
-      return this.store ? this.store.name : null
-    }
+  },
+  beforeCreate() {
+    useCharacterStore().set(this.character)
   }
 }
 </script>

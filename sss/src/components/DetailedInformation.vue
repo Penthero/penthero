@@ -9,10 +9,13 @@ import {RouterView} from 'vue-router'
 </template>
 
 <script>
+import { mapState } from 'pinia'
+import {useCharacterStore} from "../stores/character";
+
 export default {
-  props: {
-    character: Object,
-  },
+  computed: {
+    ...mapState(useCharacterStore, ['character'])
+  }
 }
 </script>
 
