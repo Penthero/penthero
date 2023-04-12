@@ -10,7 +10,7 @@ import Toggles from './Toggles'
     <p class="row"><span class="column"><b>Class :</b> {{ character.job }}</span><span
         class="column"><b>Level :</b> {{character.level}}</span></p>
 
-    <Toggles :toggles="character.toggles"/>
+    <RouterView :character="character"/>
   </div>
 </template>
 
@@ -19,14 +19,6 @@ export default {
   props: {
     character: Object,
   },
-  computed: {
-    name() {
-      if(this.character) {
-        return this.character.name
-      }
-      return null
-    }
-  }
 }
 </script>
 

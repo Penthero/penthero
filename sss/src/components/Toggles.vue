@@ -8,7 +8,12 @@
 <script>
 export default {
   props: {
-    toggles: Array,
+    character: Object,
   },
+  computed: {
+    toggles() {
+      return this.character.toggles
+    }
+  }
 }
 </script>
