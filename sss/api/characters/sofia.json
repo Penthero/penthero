@@ -3,15 +3,28 @@
   "age": 20,
   "class": "[Saintomancer] ♢",
   "level": 180,
-  "stats": {
-    "baseHealth": 5,
-    "healthIncrease": 5,
-    "baseStamina": 5,
-    "staminaIncrease": 5,
-    "baseMana": 5000,
-    "manaIncrease": 500,
-    "baseManaRegen": 0.0002
-  },
+  "races": [
+    {
+      "name": "Human",
+      "baseHealth": 5,
+      "healthIncrease": 5,
+      "baseStamina": 5,
+      "staminaIncrease": 5,
+      "baseMana": 5000,
+      "manaIncrease": 500,
+      "baseManaRegen": 0.0002
+    },
+    {
+      "name": "Orc",
+      "baseHealth": 50,
+      "healthIncrease": 50,
+      "baseStamina": 50,
+      "staminaIncrease": 50,
+      "baseMana": 500,
+      "manaIncrease": 50,
+      "baseManaRegen": 0.0001
+    }
+  ],
   "toggles": [
     {
       "type": "Environment",

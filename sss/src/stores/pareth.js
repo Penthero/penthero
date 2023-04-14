@@ -1,22 +1,26 @@
-import { ref, computed } from 'vue'
-import { defineStore } from 'pinia'
+import {ref, computed} from 'vue'
+import {defineStore} from 'pinia'
 import axios from "axios";
 
 export const useParethStore = defineStore('pareth', () => {
-  const pareth = ref(null)
-  const name = computed(() => pareth.value ? pareth.value.name : null)
-  const age = computed(() => pareth.value ? pareth.value.age : null)
-  const job = computed(() => pareth.value ? pareth.value.class : null)
-  const level = computed(() => pareth.value ? pareth.value.level : null)
-  function load() {
-    axios.get('/sss/api/characters/pareth.json')
-        .then(function(response) {
-          pareth.value = response.data
-        })
-        .catch(function(error) {
-          console.log(error)
-        })
-  }
+    const character = ref(null)
+    const race = ref(null)
+    const loaded = ref(false)
+    const name = computed(() => character.value ? character.value.name : null)
+    const age = computed(() => character.value ? character.value.age : null)
+    const job = computed(() => character.value ? character.value.class : null)
+    const level = computed(() => character.value ? character.value.level : null)
 
-  return { pareth, name, age, job, level, load }
+    function load() {
+        axios.get('/sss/api/characters/pareth.json')
+            .then(function (response) {
+                character.value = response.data
+                loaded.value = true
+            })
+            .catch(function (error) {
+                console.log(error)
+            })
+    }
+
+    return {character, name, age, job, level, loaded, load}
 })

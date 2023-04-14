@@ -1,22 +1,26 @@
-import { ref, computed } from 'vue'
-import { defineStore } from 'pinia'
+import {ref, computed} from 'vue'
+import {defineStore} from 'pinia'
 import axios from "axios";
 
 export const useMornnStore = defineStore('mornn', () => {
-  const mornn = ref(null)
-  const name = computed(() => mornn.value ? mornn.value.name : null)
-  const age = computed(() => mornn.value ? mornn.value.age : null)
-  const job = computed(() => mornn.value ? mornn.value.class : null)
-  const level = computed(() => mornn.value ? mornn.value.level : null)
-  function load() {
-    axios.get('/sss/api/characters/mornn.json')
-        .then(function(response) {
-          mornn.value = response.data
-        })
-        .catch(function(error) {
-          console.log(error)
-        })
-  }
+    const character = ref(null)
+    const race = ref(null)
+    const loaded = ref(false)
+    const name = computed(() => character.value ? character.value.name : null)
+    const age = computed(() => character.value ? character.value.age : null)
+    const job = computed(() => character.value ? character.value.class : null)
+    const level = computed(() => character.value ? character.value.level : null)
 
-  return { mornn: mornn, name, age, job, level, load }
+    function load() {
+        axios.get('/sss/api/characters/mornn.json')
+            .then(function (response) {
+                character.value = response.data
+                loaded.value = true
+            })
+            .catch(function (error) {
+                console.log(error)
+            })
+    }
+
+    return {character, name, age, job, level, loaded, load}
 })

@@ -23,16 +23,21 @@ export const useCharacterStore = defineStore('character', () => {
                 character.value = useMornnStore()
                 break
             default:
-                return null
+                character.value = useSofiaStore()
+        }
+        if (!character.value.loaded) character.value.load()
+    }
+
+    function setRace(race) {
+        if (character.value && character.value.character.races) {
+            for (let i = 0; i < character.value.character.races.length; ++i) {
+                if (race === character.value.character.races[i].name.toLowerCase()) {
+                    character.value.race = character.value.character.races[i]
+                    return
+                }
+            }
         }
     }
 
-    function load() {
-        useSofiaStore().load()
-        useAlithStore().load()
-        useParethStore().load()
-        useMornnStore().load()
-    }
-
-    return {character: character, set, load}
+    return {character: character, set, setRace}
 })

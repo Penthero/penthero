@@ -10,6 +10,7 @@ import Toggles from './Toggles'
     <p class="row"><span class="column"><b>Class :</b> {{ character.job }}</span><span
         class="column"><b>Level :</b> {{character.level}}</span></p>
 
+    {{character.race}}
     <RouterView :character="character"/>
   </div>
 </template>

@@ -1,8 +1,5 @@
 <script setup>
 import {RouterView} from 'vue-router'
-import {useCharacterStore} from "./stores/character";
-
-useCharacterStore().load()
 </script>
 
 <template>
