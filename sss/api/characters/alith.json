@@ -21,6 +21,21 @@
           "name": "[AvoiDance]",
           "level": 71,
           "description": ""
+        },
+        {
+          "name": "[Utterly unimpressed]",
+          "level": 100,
+          "description": "Strike a disinterested pose and gain (0.5*Skill level)% resistance to all damage and ailments for up to (Class Level/20) seconds (max: 30s). Performing any other action cancels this effect. Sixty seconds cooldown."
+        },
+        {
+          "name": "[Presentable]",
+          "level": 100,
+          "description": "Your hair doesn’t get tangled. Your makeup doesn’t run. Your nails do not break. You do not grow any body hair. Your face is more symmetrical. Your teeth are white. Your skin is unblemished. Your clothes do not crease. You do not sweat. You smell of flowers… Under a storm or in the deepest pits of filth, a lady must always be presentable. And thus, you will."
+        },
+        {
+          "name": "[Heir of fire]",
+          "level": 100,
+          "description": "Apply a stack of ‘Devouring fire’ on target for every successful melee attack, up to 100 stacks.<br>(An attack needs to deal at least 1 health point of damage to be successful)<br>Devouring fire lasts for 3 seconds, renewed upon applying a new stack, and augments damage received from all physical attacks by 10%."
         }
       ]
     },
@@ -50,7 +65,12 @@
         {
           "name": "[Menial chores]",
           "level": 71,
-          "description": ""
+          "description": "",
+          "target": {
+            "type": "replace",
+            "level": 100,
+            "result": "[Shinobi]"
+          }
         },
         {
           "name": "[Botany]",

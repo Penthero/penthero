@@ -13,16 +13,6 @@
       "baseMana": 5000,
       "manaIncrease": 500,
       "baseManaRegen": 0.0002
-    },
-    {
-      "name": "Orc",
-      "baseHealth": 50,
-      "healthIncrease": 50,
-      "baseStamina": 50,
-      "staminaIncrease": 50,
-      "baseMana": 500,
-      "manaIncrease": 50,
-      "baseManaRegen": 0.0001
     }
   ],
   "toggles": [
@@ -54,7 +44,7 @@
         {
           "name": "[Holy Skeleton]",
           "level": 1,
-          "description": "Allows the Saintomancer to control a ritually created Holy Skeleton wielding the Holy Light of gods. The Holy Skeleton will keep experience when switching bones. Physical and magical capabilities are influenced by the current bones.<br><br>Lv.1 : The Saintomancer always knows where their Holy Skeleton is.<br>Lv.10 : The Holy Skeleton boasts a glorious [Halo] empowering Holy related skills.<br>Lv.20 : The Holy Skeleton can create and wield a sword of Holy light. Proficiency depends on the host bones.<br>Lv.30 : Pareth’s bones are (1*Skill Level) denser.<br>Lv.40 : Pareth’s movements are (1*Skill Level) quieter.<br>Lv.50 : Pareth can cast [Consecrated grounds], granting all allies in a (skill level / 2) radius and himself a 20% increase in all physical stats. Bonus doubled for skeletons."
+          "description": "Allows the Saintomancer to control a ritually created Holy Skeleton wielding the Holy Light of gods. The Holy Skeleton will keep experience when switching bones. Physical and magical capabilities are influenced by the current bones.<br><br>Lv.1 : The Saintomancer always knows where their Holy Skeleton is.<br>Lv.10 : The Holy Skeleton boasts a glorious [Halo] empowering Holy related skills.<br>Lv.20 : The Holy Skeleton can create and wield a sword of Holy light. Proficiency depends on the host bones.<br>Lv.30 : Pareth’s bones are (1*Skill Level) denser.<br>Lv.40 : Pareth’s movements are (1*Skill Level) quieter.<br>Lv.50 : Pareth can cast [Consecrated grounds], granting all allies in a (skill level / 2) radius and himself a 20% increase in all physical stats. Bonus doubled for skeletons.<br>Lv.60 : Pareth takes 23% (Skill Level / 4) less damage from magical attacks.<br>Lv.70 : Pareth can now understand complex commands.<br>Lv.80 : Pareth deals double damage against the undead.<br>Lv.90 : Pareth’s light weapon can now take many forms."
         },
         {
           "name": "[Heal Undead]",
@@ -69,6 +59,10 @@
         {
           "name": "[Lead the Dead]",
           "level": 40,
+          "discarded": {
+            "level": 100,
+            "replacement": "[Graveyard of the righteous]"
+          },
           "description": "The Saintomancer is the saint of the dead.<br>Nearby undead are more likely to be neutral towards the Saintomancer.The Saintomancer may spend mana to influence nearby undead. The cost and efficacy will vary depending on the intelligence and level of the undead as well as the kind of influence being exerted."
         },
         {
@@ -94,6 +88,19 @@
             ]
           },
           "description": "Allows the Saintomancer to summon and host a Maiden Banshee.<br>Summoning the Maiden Banshee will lock 10 000 mana out of the summoner’s mana pool for as long as the Maiden Banshee is alive.<br>The Maiden Banshee shares the level of the summoner.<br>The Maiden Banshee is attributed the special class : Lady-in-waiting, and may not change class.<br>Should the Maiden Banshee die, she may be revived for the accumulated cost of 100 000 000 mana."
+        },
+        {
+          "name": "[Graveyard of the righteous]",
+          "level": 100,
+          "condition": {
+            "type": "combination",
+            "items": [
+              "[Consecrated ]",
+              "[Mass ]",
+              "[ Grip]"
+            ]
+          },
+          "description": "Create a (3*Skill Level) meters large and wide consecrated graveyard around the Saintomancer (Must be solid ground).<br>The skeletons of the righteous dead are buried in the graveyard, their arms and upper body may surface to grab the Saintomancer’s enemies, incapacitate them and - or drag them underground.<br>The skeletons have the relative strength and resilience of a level 1 Paladin and cannot inflict any direct damage.<br>Requires an (10 - class level/50) seconds channeling to deploy. Costs 100 mana per second to maintain."
         }
       ]
     },
@@ -146,7 +153,35 @@
               "[ Essence]"
             ]
           },
+          "target": {
+            "type": "replace",
+            "level": 99,
+            "result": "[Vakariazrehafin of Sorrow]"
+          },
           "description": "Grow to become the embodiment of death in this realm.<br>You may reap the souls of the recently passed, all is equal in death.<br>You may reap the souls of the recently passed, all is equal in death."
+        },
+        {
+          "name": "[Vakariazrehafin of Sorrow]",
+          "level": 99,
+          "condition": {
+            "type": "replace",
+            "items": [
+              "[Avatar of death]"
+            ]
+          },
+          "description": "Welcome back, my dear daughter.<br><br>Sorrow the Recessed has recognized your value. However, one cannot be reborn as an Apostle without a proper ritual, as such, you have been offered a middle ground. Vakariazrehafin is granted authority as an honorary Apostle. Vakariazrehafin is granted advanced mana perception. When Vakariazrehafin’s mana hits 0, she may choose to temporarily assume the physical form of a Daughter of Sorrow, lasting for five minutes, mana will remain at zero for this duration and the following thirty minutes. Ten levels of debt will be incurred each time and no experience will be gained from kills that occur as a result of this skill's use.<br>(Evolves at Class Level 300)"
+        },
+        {
+          "name": "[Holy Wings of undeath]",
+          "level": 100,
+          "condition": {
+          "type": "combination",
+          "items": [
+            "[Holy Wings of ",
+            "[ undeath]"
+          ]
+        },
+          "description": "You grew holy wings of undeath, your anatomy forever changed. These are your limbs, take to the sky, blessed one, there is no need for explanations, and no going back."
         }
       ]
     },
@@ -194,6 +229,21 @@
           "name": "[Poker Face]",
           "level": "31-39",
           "description": "Keeping a straight face in all situations is (2*Skill level) easier."
+        },
+        {
+          "name": "[Identify]",
+          "level": 71,
+          "description": "See information about the target. Higher level gives additional information."
+        }
+      ]
+    },
+    {
+      "type": "Specialization",
+      "items": [
+        {
+          "name": "[Eclipse Skeleton]",
+          "level": 100,
+          "description": "Binds the Saintomancer with Pareth.<br>Pareth keeps all previous abilities, their scaling and efficacy is enhanced by an additional 100%.<br>Pareth is now soul linked to the Saintomancer. Pareth is now able to teleport to the Saintomancer’s side at any time, from anywhere. There is no longer any mana cost in communicating with Pareth. The Saintomancer is now able to see and hear using Pareth’s senses.<br>Pareth’s level is now linked with the Saintomancers’.<br>Pareth completely negates any damage it would take that would amount to less than 10% of its total maximum health.<br><br>Pareth knows the following skills :<br>Active :<ul><li><a href=\"./sss/character/pareth/[Sanctified grounds]\">Sanctified grounds</a></li><li><a href=\"./sss/character/pareth/[Flying shields of light]\">Flying shields of light</a></li><li><a href=\"./sss/character/pareth/[Chains of the four seals]\">Chains of the four seals</a></li><li><a href=\"./sss/character/pareth/[Gravity well]\">Gravity well</a></li><li><a href=\"./sss/character/pareth/[Purification]\">Purification</a></li><li><a href=\"./sss/character/pareth/[Greater Heal]\">Greater Heal</a></li></ul><br><br>Passive :<br><ul><li><a href=\"./sss/character/pareth/[Stellar corona]\">Stellar corona</a></li><li><a href=\"./sss/character/pareth/[Shapeless weapon of light]\">Shapeless weapon of light</a></li><li><a href=\"./sss/character/pareth/[Shapeless armor of light]\">Shapeless armor of light</a></li><li><a href=\"./sss/character/pareth/[Higher magical damage negation]\">Higher magical damage negation</a></li><li><a href=\"./sss/character/pareth/[Space magic resilience]\">Space magic resilience</a></li><li><a href=\"./sss/character/pareth/[Displacement skills immunity]\">Displacement skills immunity</a></li></ul>"
         }
       ]
     },
@@ -247,22 +297,42 @@
         },
         {
           "name": "[Mass ]",
-          "level": "70",
+          "level": 70,
           "description": "Dispels all magic in a",
           "target": {
             "type": "combination",
-            "level": 70,
-            "result": "[Angel’s bolt]"
+            "level": 100,
+            "result": "[Graveyard of the righteous]"
           }
         },
         {
           "name": "[ Banshee]",
-          "level": "70",
+          "level": 70,
           "description": "shriek. Inflicts [Confusion].",
           "target": {
             "type": "combination",
             "level": 71,
             "result": "[Maiden Banshee]"
+          }
+        },
+        {
+          "name": "[Consecrated ]",
+          "level": 100,
+          "description": "Creates a.",
+          "target": {
+            "type": "combination",
+            "level": 100,
+            "result": "[Graveyard of the righteous]"
+          }
+        },
+        {
+          "name": "[ grip]",
+          "level": 100,
+          "description": "its clutches",
+          "target": {
+            "type": "combination",
+            "level": 100,
+            "result": "[Graveyard of the righteous]"
           }
         }
       ]
@@ -348,6 +418,26 @@
             "type": "combination",
             "level": 84,
             "result": "[Avatar of death]"
+          }
+        },
+        {
+          "name": "[Holy Wings of ]",
+          "level": 100,
+          "description": "Take to the",
+          "target": {
+            "type": "combination",
+            "level": 100,
+            "result": "[Holy Wings of undeath]"
+          }
+        },
+        {
+          "name": "[ undeath]",
+          "level": 100,
+          "description": "to eternal life.",
+          "target": {
+            "type": "combination",
+            "level": 100,
+            "result": "[Holy Wings of undeath]"
           }
         }
       ]
