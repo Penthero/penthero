@@ -26,20 +26,5 @@ export const useSofiaStore = defineStore('sofia', () => {
             })
     }
 
-    function skill(skillName) {
-        if (!this.skills) {
-            return null
-        }
-
-        for (let i = 0; i < this.skills.length; ++i) {
-            for (let j = 0; j < this.skills[i].items.length; ++j) {
-                if (this.skills[i].items[j].name === skillName) {
-                    return this.skills[i].items[j]
-                }
-            }
-        }
-        return null
-    }
-
-    return {character, name, age, job, level, toggles, skills, race, loaded, skill, load}
+    return {character, name, age, job, level, toggles, skills, race, loaded, load}
 })

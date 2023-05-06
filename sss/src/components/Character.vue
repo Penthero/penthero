@@ -10,7 +10,9 @@ import Toggles from './Toggles'
     <p class="row"><span class="column"><b>Class :</b> {{ character.job }}</span><span
         class="column"><b>Level :</b> {{character.level}}</span></p>
 
-    {{character.race}}
+    <select>
+      <option v-for="race in character.races" :value="race.name">{{race.name}}</option>
+    </select>
     <RouterView :character="character"/>
   </div>
 </template>

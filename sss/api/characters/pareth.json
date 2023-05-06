@@ -2,5 +2,10 @@
     "name": "Pareth",
     "age": 0,
     "class": "A really big skeleton",
-    "level": 180
+    "level": 180,
+    "blessing": {
+        "name": "Blessing of bloating",
+        "rank": "A",
+        "description": "You are the ever growing. Gain bonus strength and health proportional to your body weight."
+    }
 }

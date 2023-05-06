@@ -1,6 +1,78 @@
 {
-    "name": "Alith",
-    "age": 22,
-    "class": "[Lady-in-waiting] ♢",
-    "level": 180
+  "name": "Alith",
+  "age": 22,
+  "class": "[Lady-in-waiting] ",
+  "level": 180,
+  "blessing": {
+    "name": "Blessing of Phoenix lineage",
+    "rank": "SSS",
+    "description": "You experienced rebirth from the ashes. You shall rise again. Complete heat immunity. Grants an exclusive passive skill every 100 levels."
+  },
+  "skills": [
+    {
+      "type": "Active Skills",
+      "items": [
+        {
+          "name": "[Maiden’s shriek]",
+          "level": 71,
+          "description": ""
+        },
+        {
+          "name": "[AvoiDance]",
+          "level": 71,
+          "description": ""
+        }
+      ]
+    },
+    {
+      "type": "Passive Skills",
+      "items": [
+        {
+          "name": "[Accounting]",
+          "level": 71,
+          "description": ""
+        },
+        {
+          "name": "[Split focus]",
+          "level": 71,
+          "description": ""
+        },
+        {
+          "name": "[Hidden presence]",
+          "level": 71,
+          "description": ""
+        }
+      ]
+    },
+    {
+      "type": "Classless Skills",
+      "items": [
+        {
+          "name": "[Menial chores]",
+          "level": 71,
+          "description": ""
+        },
+        {
+          "name": "[Botany]",
+          "level": 71,
+          "description": ""
+        },
+        {
+          "name": "[Cooking]",
+          "level": 71,
+          "description": ""
+        },
+        {
+          "name": "[Alchemy]",
+          "level": 71,
+          "description": ""
+        },
+        {
+          "name": "[Human form]",
+          "level": 71,
+          "description": ""
+        }
+      ]
+    }
+  ]
 }

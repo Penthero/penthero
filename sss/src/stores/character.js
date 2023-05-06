@@ -7,6 +7,7 @@ import {useMornnStore} from "./mornn";
 
 export const useCharacterStore = defineStore('character', () => {
     const character = ref(null)
+    const skills = computed(() => character.value && character.value.character && character.value.character.skills ? character.value.character.skills : [])
 
     function set(characterName) {
         switch (characterName) {
@@ -39,5 +40,22 @@ export const useCharacterStore = defineStore('character', () => {
         }
     }
 
-    return {character: character, set, setRace}
+    function skill(skillName) {
+        if (!character.value || !character.value.character || !character.value.character.skills) {
+            return null
+        }
+
+        const skills = character.value.character.skills
+
+        for (let i = 0; i < skills.length; ++i) {
+            for (let j = 0; j < skills[i].items.length; ++j) {
+                if (skills[i].items[j].name === skillName) {
+                    return skills[i].items[j]
+                }
+            }
+        }
+        return null
+    }
+
+    return {character, skills, skill, set, setRace}
 })

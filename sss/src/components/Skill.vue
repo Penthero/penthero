@@ -3,21 +3,24 @@
 </template>
 
 <script>
-import {mapState} from "pinia";
 import {useCharacterStore} from "../stores/character";
 
 export default {
   computed: {
-    ...mapState(useCharacterStore, ['character']),
-    skill() {
+    skillName() {
       return this.$route.params.skill
     },
     skillData() {
-      return this.character.skill(this.skill)
+      return this.skill(this.skillName)
     },
     description() {
       return this.skillData ? this.skillData.description : ''
     },
+  },
+  methods: {
+    skill(skill) {
+      return useCharacterStore().skill(this.skillName)
+    }
   }
 }
 </script>

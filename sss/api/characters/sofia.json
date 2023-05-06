@@ -54,7 +54,7 @@
         {
           "name": "[Holy Skeleton]",
           "level": 1,
-          "description": "Allows the Saintomancer to control a ritually created Holy Skeleton wielding the Holy Light of gods. The Holy Skeleton will keep experience when switching bones. Physical and magical capabilities are influenced by the current bones.<br><br>Lv.1 : The Saintomancer always knows where their Holy Skeleton is.<br>Lv.10 : The Holy Skeleton boasts a glorious [Halo] empowering Holy related skills.<br>Lv.20 : The Holy Skeleton can create and wield a sword of Holy light. Proficiency depends on the host bones."
+          "description": "Allows the Saintomancer to control a ritually created Holy Skeleton wielding the Holy Light of gods. The Holy Skeleton will keep experience when switching bones. Physical and magical capabilities are influenced by the current bones.<br><br>Lv.1 : The Saintomancer always knows where their Holy Skeleton is.<br>Lv.10 : The Holy Skeleton boasts a glorious [Halo] empowering Holy related skills.<br>Lv.20 : The Holy Skeleton can create and wield a sword of Holy light. Proficiency depends on the host bones.<br>Lv.30 : Pareth’s bones are (1*Skill Level) denser.<br>Lv.40 : Pareth’s movements are (1*Skill Level) quieter.<br>Lv.50 : Pareth can cast [Consecrated grounds], granting all allies in a (skill level / 2) radius and himself a 20% increase in all physical stats. Bonus doubled for skeletons."
         },
         {
           "name": "[Heal Undead]",
@@ -65,6 +65,35 @@
           "name": "[Summon blood]",
           "level": 1,
           "description": "Summons liquid human blood anywhere in a (1*Skill Level) meters radius from the Saintomancer (Must be free space). The quantity of blood summoned this way is : (1*Skill Level*Mana Spent) Milliliters."
+        },
+        {
+          "name": "[Lead the Dead]",
+          "level": 40,
+          "description": "The Saintomancer is the saint of the dead.<br>Nearby undead are more likely to be neutral towards the Saintomancer.The Saintomancer may spend mana to influence nearby undead. The cost and efficacy will vary depending on the intelligence and level of the undead as well as the kind of influence being exerted."
+        },
+        {
+          "name": "[Angel’s bolt]",
+          "level": 67,
+          "condition": {
+            "type": "combination",
+            "items": [
+              "[Angel’s ]",
+              "[ bolt]"
+            ]
+          },
+          "description": "Call forth the divine lightning bolt of Angel Acromegon to strike down foes.<br>May only be cast while airborne.<br>Costs 10000 mana per use."
+        },
+        {
+          "name": "[Maiden Banshee]",
+          "level": 71,
+          "condition": {
+            "type": "combination",
+            "items": [
+              "[Maiden ]",
+              "[ banshee]"
+            ]
+          },
+          "description": "Allows the Saintomancer to summon and host a Maiden Banshee.<br>Summoning the Maiden Banshee will lock 10 000 mana out of the summoner’s mana pool for as long as the Maiden Banshee is alive.<br>The Maiden Banshee shares the level of the summoner.<br>The Maiden Banshee is attributed the special class : Lady-in-waiting, and may not change class.<br>Should the Maiden Banshee die, she may be revived for the accumulated cost of 100 000 000 mana."
         }
       ]
     },
@@ -82,6 +111,42 @@
             ]
           },
           "description": "The Saintomancer was granted a name.<br>They may see the inhabitants of the Deep.<br>Lv.1 : The Saintomancer and their summons are immune to the [Mind control], [Hypnosis], [Confusion], [Insanity] and [Instant Death] status effects."
+        },
+        {
+          "name": "[Armor of Bones]",
+          "level": 67,
+          "condition": {
+            "type": "combination",
+            "items": [
+              "[Armor ]",
+              "[ of Bones]"
+            ]
+          },
+          "description": "Gather and reform bones to create a blessed bone armor protecting the Saintomancer. The armor can store up to (100*Skill level) of bones to repair itself in combat. Protective strength goes up every level."
+        },
+        {
+          "name": "[Pristine Essence]",
+          "level": 84,
+          "condition": {
+            "type": "combination",
+            "items": [
+              "[Pristine ]",
+              "[ Essence]"
+            ]
+          },
+          "description": "You are the unblemished. Immunity to memory alterations. Augmented resistance to perception alterations."
+        },
+        {
+          "name": "[Avatar of death]",
+          "level": 84,
+          "condition": {
+            "type": "combination",
+            "items": [
+              "[Pristine ]",
+              "[ Essence]"
+            ]
+          },
+          "description": "Grow to become the embodiment of death in this realm.<br>You may reap the souls of the recently passed, all is equal in death.<br>You may reap the souls of the recently passed, all is equal in death."
         }
       ]
     },
@@ -143,17 +208,62 @@
         {
           "name": "[ bolt]",
           "level": 10,
-          "description": "projectile from the hand."
+          "description": "projectile from the hand.",
+          "target": {
+            "type": "combination",
+            "level": 67,
+            "result": "[Angel’s bolt]"
+          }
         },
         {
           "name": "[Maiden ]",
           "level": 20,
-          "description": "Invoke the power of a maiden"
+          "description": "Invoke the power of a maiden",
+          "target": {
+            "type": "combination",
+            "level": 71,
+            "result": "[Maiden Banshee]"
+          }
         },
         {
           "name": "[ mist]",
           "level": 20,
           "description": "in a thick mist."
+        },
+        {
+          "name": "[Angel’s ]",
+          "level": 60,
+          "description": "The ethereal call",
+          "target": {
+            "type": "combination",
+            "level": 67,
+            "result": "[Angel’s bolt]"
+          }
+        },
+        {
+          "name": "[ soul]",
+          "level": 60,
+          "description": "to the necromancer’s lifeforce."
+        },
+        {
+          "name": "[Mass ]",
+          "level": "70",
+          "description": "Dispels all magic in a",
+          "target": {
+            "type": "combination",
+            "level": 70,
+            "result": "[Angel’s bolt]"
+          }
+        },
+        {
+          "name": "[ Banshee]",
+          "level": "70",
+          "description": "shriek. Inflicts [Confusion].",
+          "target": {
+            "type": "combination",
+            "level": 71,
+            "result": "[Maiden Banshee]"
+          }
         }
       ]
     },
@@ -183,12 +293,62 @@
         {
           "name": "[Pristine ]",
           "level": 30,
-          "description": "Your soul is in"
+          "description": "Your soul is in",
+          "target": {
+            "type": "combination",
+            "level": 84,
+            "result": "[Pristine Essence]"
+          }
         },
         {
           "name": "[ of Bones]",
           "level": 30,
-          "description": "against physical projectiles."
+          "description": "against physical projectiles.",
+          "target": {
+            "type": "combination",
+            "level": 67,
+            "result": "[Armor of Bones]"
+          }
+        },
+        {
+          "name": "[Armor ]",
+          "level": 50,
+          "description": "Gather prayers to protect",
+          "target": {
+            "type": "combination",
+            "level": 67,
+            "result": "[Armor of Bones]"
+          }
+        },
+        {
+          "name": "[ Essence]",
+          "level": 50,
+          "description": "per second.",
+          "target": {
+            "type": "combination",
+            "level": 84,
+            "result": "[Pristine Essence]"
+          }
+        },
+        {
+          "name": "[Avatar of ]",
+          "level": 80,
+          "description": "Become a walking",
+          "target": {
+            "type": "combination",
+            "level": 84,
+            "result": "[Avatar of death]"
+          }
+        },
+        {
+          "name": "[ death]",
+          "level": 80,
+          "description": "necrotic aura.",
+          "target": {
+            "type": "combination",
+            "level": 84,
+            "result": "[Avatar of death]"
+          }
         }
       ]
     }

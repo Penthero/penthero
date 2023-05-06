@@ -12,7 +12,7 @@ $baseManaRegen = 0.0002 * (isset($_GET['ring']) && $_GET['ring'] ? 1.05 : 1);
 $alith = isset($_GET['alith']) && $_GET['alith'] ? 10000 : 0;
 $scribe = isset($_GET['scribe']) && $_GET['scribe'] ? 5000 : 0;
 $ambient = isset($_GET['ambient']) && $_GET['ambient'] ? 1 : 0.25;
-$sunRune = isset($_GET['sun']) && $_GET['sun'] ? 3 : 1;
+$sunRune = isset($_GET['sun']) && $_GET['sun'] ? 1.2 : 1;
 // LAYERS
 $layers = [
     [
@@ -24,14 +24,14 @@ $layers = [
 
 function numLayers(int $level): int
 {
-    $numLayers = 0;
+    /*$numLayers = 0;
     for ($l = 100; $l <= $level; $l++) {
         if ($l % 100 === 0 || ($l > 200 && $l % 50 === 0)) {
             $numLayers++;
         }
-    }
+    }*/
 
-    return $numLayers;
+   return floor($level > 200 ? $level / 50 - 2 : $level / 100);
 }
 
 function layerBonus(string $type, int $level): int
@@ -65,11 +65,11 @@ function mana(int $level): int
     return $baseMana + ($level - 1) * $manaIncrease - $alith - $scribe + layerBonus('mana', $level);
 }
 
-function manaRegen(int $level): int
+function manaRegen(int $level): float
 {
     global $baseManaRegen, $ambient, $sunRune;
     $value = mana($level) * $baseManaRegen * pow(2, numLayers($level)) * $ambient * $sunRune;
-    return round($value > 0 ? $value : 0);
+    return $value > 0 ? $value : 0;
 }
 
 ?>
